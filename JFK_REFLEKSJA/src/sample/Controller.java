@@ -60,7 +60,7 @@ public class Controller {
 
         descriptionArea.clear();
         DirectoryChooser directory = new DirectoryChooser();
-        directory.setInitialDirectory(new File("../"));
+        directory.setInitialDirectory(new File("./"));
         directory.setTitle("Open Resource File");
         File folder = directory.showDialog(Main.mainStage);
 
