@@ -133,7 +133,7 @@ public class Controller {
     private void showDescription() {
         if (treeView.getSelectionModel().getSelectedItem() != null && treeView.getSelectionModel().getSelectedItem().isLeaf()) {
             for (int i = 0; i < methodsList.size(); i++) {
-                if (methodsList.get(i).toString().equals(treeView.getSelectionModel().getSelectedItem().getValue().toString())) {
+                if (methodsList.get(i)==(treeView.getSelectionModel().getSelectedItem().getValue())) {
                     if (!methodsList.get(i).isAnnotationPresent(Description.class)) {
                         descriptionArea.setText("No additional information specified");
                         return;
@@ -167,7 +167,7 @@ public class Controller {
 
             try {
                 for (Method MethodsList_ : methodsList) {
-                    if (MethodsList_.toString().equals(treeView.getSelectionModel().getSelectedItem().getValue().toString())) {
+                    if (MethodsList_==(treeView.getSelectionModel().getSelectedItem().getValue())) {
                         DecimalFormat decimalFormat = new DecimalFormat("#.##");
                         resultLabel.setText(String.valueOf(decimalFormat.format(MethodsList_.invoke(aClass.newInstance(), Double.valueOf(firstParameter.getText()), Double.valueOf(secondParameter.getText())))));
                         break;
